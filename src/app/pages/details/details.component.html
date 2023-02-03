@@ -1,0 +1,29 @@
+<app-poke-header></app-poke-header>
+
+<app-poke-loading *ngIf="isLoading"></app-poke-loading>
+
+<section *ngIf="!isLoading && !isError">
+   <div class="content-title">
+      <h2 class="animate__animated animate__slideInLeft">{{ pokemonName }}</h2>
+      <p class="animate__animated animate__slideInRight">{{ pokemonNameJapanese }}</p>
+   </div>
+
+   <article class="content-detail">
+      <figure class="animate__animated animate__slideInDown">
+        <img [src]="pokemonImage" [alt]="pokemonName">
+      </figure>
+
+      <h3>Estatísticas</h3>
+
+      <ul>
+        <li *ngFor="let value of pokemonStatistics" class="animate__animated animate__slideInUp">
+            {{ value.stat.name }}
+            <span> {{ value.base_stat }}</span>
+        </li>
+      </ul>
+
+      <a [routerLink]="['/']" class="btn-back">Voltar</a>
+   </article>
+</section>
+
+<app-poke-error *ngIf="isError"></app-poke-error>

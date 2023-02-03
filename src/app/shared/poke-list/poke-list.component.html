@@ -1,0 +1,38 @@
+<app-poke-search (emitSearch)="getSearch($event)"></app-poke-search>
+
+<app-poke-loading *ngIf="isLoading"></app-poke-loading>
+
+<section *ngIf="!isLoading && !isLoading">
+  <ng-template ngFor let-pokemon [ngForOf]="getAllPokemonsBySearch(allPokemons)">
+    <article class="pokemon" *ngIf="pokemon.status">
+      <a [routerLink]="['details', pokemon.status.id]" [attr.title]="textTitleDetail(pokemon.name)">
+        <div class="pokemon__status">
+          <h2>{{ pokemon.name }}</h2>
+          <ul>
+            <li *ngFor="let value of pokemon.status.types">
+              {{ value.type.name }}
+            </li>
+          </ul>
+        </div>
+        <figure class="pokemon__image">
+          <img
+            [src]="getPokemonImage(pokemon.status)"
+            [alt]="pokemon.name"
+          />
+        </figure>
+      </a>
+    </article>
+  </ng-template>
+</section>
+
+<footer *ngIf="!isLoading && !isLoading">
+  <button [disabled]="!hasPreviousPage()" type="button" (click)="previousPagination()">
+    Anterior
+  </button>
+
+  <button [disabled]="!hasNextPage()" type="button" (click)="nextPagination()">
+    Próxima
+  </button>
+</footer>
+
+<app-poke-error *ngIf="isError"></app-poke-error>

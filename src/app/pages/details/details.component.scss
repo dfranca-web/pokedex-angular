@@ -1,0 +1,126 @@
+@import '../../../config-scss/rem-calc.scss';
+@import '../../../config-scss/extend.scss';
+
+:host {
+  height: 100%;
+
+ section {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - rem-calc(80) - 3rem);
+
+  .content-title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: rem-calc(20) 0;
+    position: relative;
+
+    h2 {
+      color: var(--white);
+      font-size: rem-calc(42);
+      font-style: italic;
+      font-weight: 600;
+      text-transform: capitalize;
+    }
+
+    p {
+      color: var(--white-alpha);
+      font-size: rem-calc(72);
+      font-weight: 500;
+      position: absolute;
+      top: -#{rem-calc(24)};
+    }
+  }
+
+  .content-detail {
+    flex: 1;
+    border-radius: rem-calc(32) rem-calc(32) 0 0;
+    background-color: var(--white);
+    @extend .bg-gradient;
+
+    figure {
+      height: rem-calc(400);
+      position: relative;
+      top: -#{rem-calc(64)};
+
+      img {
+        max-width: calc(95% - rem-calc(84));
+        height: 100%;
+        position: relative;
+        left: rem-calc(42);
+      }
+    }
+
+    h3 {
+      padding: rem-calc(20);
+      color: var(--white);
+      font-size: rem-calc(42);
+      font-weight: 500;
+      font-style: italic;
+      text-transform: capitalize;
+    }
+
+    ul {
+      padding: 0 rem-calc(20);
+
+      li {
+        display: flex;
+        justify-content: space-between;
+        padding: rem-calc(20);
+        margin-bottom: rem-calc(20);
+        color: var(--primary-color);
+        font-weight: 500;
+        text-transform: capitalize;
+        border-radius: rem-calc(6);
+        background-color: var(--white);
+        transition: all 0.2s ease-in-out;
+        @extend .box-shadow;
+
+        &:hover {
+          color: var(--white);
+          background-color: var(--secondary-color);
+        }
+      }
+    }
+
+    .btn-back {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: rem-calc(20);
+      margin-top: rem-calc(40);
+      color: var(--white);
+      font-size: rem-calc(18);
+      text-decoration: none;
+      background-color: var(--secondary-color);
+    }
+  }
+ }
+}
+
+@media (max-width: 800px) {
+  .content-title {
+    p {
+      font-size: rem-calc(64) !important;
+      top: -#{rem-calc(12)} !important;
+    }
+  }
+
+  .content-detail {
+    figure {
+      display: flex;
+      justify-content: center;
+      height: auto !important;
+      padding: 0 rem-calc(32);
+      margin-bottom: rem-calc(32);
+      top: rem-calc(22) !important;
+
+      img {
+        width: 100%;
+        height: auto !important;
+        left: 0 !important;
+      }
+    }
+  }
+}

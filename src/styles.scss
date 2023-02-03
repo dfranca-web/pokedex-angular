@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,700&display=swap');
+
+@import './config-scss/variables.scss';
+@import './config-scss/reset.scss';
+@import './config-scss/rem-calc.scss';
+
+html {
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--primary-color);
+
+  body {
+    height: 100%;
+
+    main {
+      display: flex;
+      flex-direction: column;
+      max-width: rem-calc(900);
+      height: 100%;
+      padding: 0 rem-calc(32);
+      margin: 0 auto;
+      box-sizing: border-box;
+    }
+  }
+}

@@ -12,8 +12,9 @@
     "prettier:check": "npx prettier --config .prettierrc.json --check \"src/**/*.{ts,scss,html}\""
   },
   "lint-staged": {
-    "src/**/*.{ts,css,html}": [
-      "npm run prettier:check"
+    "src/**/*.{ts,scss,html}": [
+      "npm run prettier:check",
+      "npm run lint"
     ]
   },
   "husky": {

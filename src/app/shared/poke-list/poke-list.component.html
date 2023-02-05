@@ -15,10 +15,7 @@
           </ul>
         </div>
         <figure class="pokemon__image">
-          <img
-            [src]="getPokemonImage(pokemon.status)"
-            [alt]="pokemon.name"
-          />
+          <img [src]="getPokemonImage(pokemon.status)" [alt]="pokemon.name" />
         </figure>
       </a>
     </article>
@@ -30,9 +27,7 @@
     Anterior
   </button>
 
-  <button [disabled]="!hasNextPage()" type="button" (click)="nextPagination()">
-    Próxima
-  </button>
+  <button [disabled]="!hasNextPage()" type="button" (click)="nextPagination()">Próxima</button>
 </footer>
 
 <app-poke-error *ngIf="isError"></app-poke-error>

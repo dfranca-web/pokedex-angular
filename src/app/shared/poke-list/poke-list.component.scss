@@ -1,17 +1,16 @@
-@import '../../../config-scss/rem-calc.scss';
-@import '../../../config-scss/extend.scss';
+@import "../../../config-scss/rem-calc.scss";
+@import "../../../config-scss/extend.scss";
 
 :host {
   section {
     display: grid;
     gap: rem-calc(32);
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     padding: rem-calc(32) 0;
 
     .pokemon {
       display: flex;
       align-items: center;
-      max-width: 400px;
+      max-width: 100%;
       border-radius: rem-calc(6);
       @extend .bg-gradient;
       @extend .box-shadow;
@@ -65,10 +64,11 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          width: rem-calc(180);
+          max-width: rem-calc(180);
           position: relative;
 
           img {
+            width: 100%;
             max-width: 100%;
             max-height: rem-calc(150);
           }
@@ -96,6 +96,16 @@
         cursor: default;
         background-color: var(--white-alpha);
       }
+    }
+  }
+}
+
+@media (min-width: 800px) {
+  section {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
+
+    .pokemon {
+      max-width: 400px;
     }
   }
 }

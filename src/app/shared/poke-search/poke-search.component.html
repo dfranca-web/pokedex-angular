@@ -1,6 +1,14 @@
 <section>
   <label for="search">
-    <input placeholder="Buscar Pokemon..." type="text" name="search" id="search" #input [(ngModel)]="textSearch" (keyup)="search(input.value)" />
+    <input
+      placeholder="Buscar Pokemon..."
+      type="text"
+      name="search"
+      id="search"
+      #input
+      [(ngModel)]="textSearch"
+      (keyup)="search(input.value)"
+    />
 
     <span>
       <svg

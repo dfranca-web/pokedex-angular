@@ -8,9 +8,8 @@ describe('PokeErrorComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PokeErrorComponent ]
-    })
-    .compileComponents();
+      declarations: [PokeErrorComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(PokeErrorComponent);
     component = fixture.componentInstance;

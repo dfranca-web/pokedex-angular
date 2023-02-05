@@ -16,19 +16,15 @@ import { PokeErrorComponent } from './poke-error/poke-error.component';
     PokeSearchComponent,
     PokeListComponent,
     PokeLoadingComponent,
-    PokeErrorComponent
+    PokeErrorComponent,
   ],
   exports: [
     PokeHeaderComponent,
     PokeSearchComponent,
     PokeListComponent,
     PokeLoadingComponent,
-    PokeErrorComponent
+    PokeErrorComponent,
   ],
-  imports: [
-    CommonModule,
-    RouterModule,
-    FormsModule
-  ]
+  imports: [CommonModule, RouterModule, FormsModule],
 })
-export class SharedModule { }
+export class SharedModule {}

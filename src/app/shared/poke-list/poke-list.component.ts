@@ -1,6 +1,5 @@
 import { PokeApiService } from './../../service/poke-api.service';
-import { Component, OnChanges, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-poke-list',
@@ -9,15 +8,15 @@ import { Observable } from 'rxjs';
 })
 export class PokeListComponent implements OnInit {
   public allPokemons: any[] = [];
-  private paramSearch: string = '';
+  private paramSearch = '';
 
-  public isLoading: boolean = true;
-  public isError: boolean = false;
+  public isLoading = true;
+  public isError = false;
 
-  private urlNext: string = '';
-  private urlPrevious: string = '';
+  private urlNext = '';
+  private urlPrevious = '';
 
-  private imageDefault: string = 'assets/image/pokebola.png';
+  private imageDefault = 'assets/image/pokebola.png';
 
   constructor(private pokeApiService: PokeApiService) {}
 
@@ -75,7 +74,7 @@ export class PokeListComponent implements OnInit {
       (res) => {
         this.resolveResponse(res);
       },
-      (error) => {
+      () => {
         this.isError = true;
       }
     );

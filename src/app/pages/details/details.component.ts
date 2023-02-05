@@ -9,15 +9,15 @@ import { forkJoin } from 'rxjs';
   styleUrls: ['./details.component.scss'],
 })
 export class DetailsComponent implements OnInit {
-  private urlPokemon: string = 'https://pokeapi.co/api/v2/pokemon';
-  private urlName: string = 'https://pokeapi.co/api/v2/pokemon-species';
+  private urlPokemon = 'https://pokeapi.co/api/v2/pokemon';
+  private urlName = 'https://pokeapi.co/api/v2/pokemon-species';
 
   public pokemon: [any, any] = [{}, {}];
 
-  public isLoading: boolean = true;
-  public isError: boolean = false;
+  public isLoading = true;
+  public isError = false;
 
-  private imageDefault: string = 'assets/image/pokebola.png';
+  private imageDefault = 'assets/image/pokebola.png';
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -66,7 +66,7 @@ export class DetailsComponent implements OnInit {
         this.pokemon = res;
         this.isLoading = false;
       },
-      (error) => {
+      () => {
         this.isError = true;
       }
     );

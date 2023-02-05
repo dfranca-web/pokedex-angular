@@ -18,10 +18,7 @@
     <h3>Estatísticas</h3>
 
     <ul>
-      <li
-        *ngFor="let value of pokemonStatistics"
-        class="animate__animated animate__slideInUp"
-      >
+      <li *ngFor="let value of pokemonStatistics" class="animate__animated animate__slideInUp">
         {{ value.stat.name }}
         <span> {{ value.base_stat }}</span>
       </li>

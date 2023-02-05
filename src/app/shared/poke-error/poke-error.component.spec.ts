@@ -1,22 +1,22 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing'
 
-import { PokeErrorComponent } from './poke-error.component';
+import { PokeErrorComponent } from './poke-error.component'
 
 describe('PokeErrorComponent', () => {
-  let component: PokeErrorComponent;
-  let fixture: ComponentFixture<PokeErrorComponent>;
+  let component: PokeErrorComponent
+  let fixture: ComponentFixture<PokeErrorComponent>
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [PokeErrorComponent],
-    }).compileComponents();
+    }).compileComponents()
 
-    fixture = TestBed.createComponent(PokeErrorComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    fixture = TestBed.createComponent(PokeErrorComponent)
+    component = fixture.componentInstance
+    fixture.detectChanges()
+  })
 
   it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+    expect(component).toBeTruthy()
+  })
+})

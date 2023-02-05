@@ -9,7 +9,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "prettier:check": "prettier --config .prettierrc --check \"src/**/*.{ts,css,html}\""
+    "prettier:check": "prettier --config .prettierrc.json --check \"src/**/*.{ts,scss,html}\""
   },
   "lint-staged": {
     "src/**/*.{ts,css,html}": [
